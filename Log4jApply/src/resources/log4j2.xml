@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Appenders>
+		<File name="FILE" fileName="logfile.log" append="true">
+			<PatternLayout
+				pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n" />
+		</File>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} %-5p [%X{userId}] [%t] [%c:%L] - %msg%n" />
+		</Console>
+
+
+	</Appenders>
+	<Loggers>
+		<Logger name="com.axonactive.Log4jApply" level="INFO"
+			additivity="false">
+			<AppenderRef ref="Console" />
+		</Logger>
+		<Root level="ERROR">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>
